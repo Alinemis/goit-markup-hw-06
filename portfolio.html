@@ -30,10 +30,12 @@
           >
           <ul class="header-list list">
             <li class="header-item">
-              <a class="header-link link active" href="./index.html">Studio</a>
+              <a class="header-link link" href="./index.html">Studio</a>
             </li>
             <li class="header-item">
-              <a class="header-link link" href="./portfolio.html">Portfolio</a>
+              <a class="header-link link active" href="./portfolio.html"
+                >Portfolio</a
+              >
             </li>
             <li class="header-item">
               <a class="header-link link" href="">Contacts</a>
@@ -60,7 +62,7 @@
     <main>
       <section class="portfolio">
         <div class="container">
-          <h1 class="portfolio-title" hidden>Portfolio</h1>
+          <h1 class="portfolio-title visually-hidden">Portfolio</h1>
 
           <ul class="list list-btn">
             <li class="portfolio-item-btn">
@@ -367,6 +369,27 @@
               </a>
             </li>
           </ul>
+        </div>
+        <!-- form-footer -->
+        <div class="footer-form-wrapper">
+          <p class="form-title">Subscribe</p>
+          <form class="form-footer" name="footer_form">
+            <label class="label-form-footer" for="">
+              <input
+                class="input-form-footer"
+                type="email"
+                name="email"
+                placeholder=" "
+              />
+              <span class="form-title-email">E-mail</span>
+            </label>
+            <button class="form--footer-btn btn" type="submit">
+              Subscribe
+              <svg class="form-footer-icon" width="24" height="24">
+                <use href="./images/svg/sprite/icons.svg#frame"></use>
+              </svg>
+            </button>
+          </form>
         </div>
       </div>
     </footer>
