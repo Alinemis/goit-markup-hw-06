@@ -93,6 +93,20 @@ img {
   letter-spacing: 0.04em;
 }
 
+/* hidden */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 /* icons */
 
 .icon-link {
@@ -490,6 +504,10 @@ img {
   letter-spacing: 0.02em;
 }
 
+.footer-right {
+  margin-right: 80px;
+}
+
 /* footer icons */
 .icon-list-footer {
   gap: 16px;
@@ -498,6 +516,77 @@ img {
 .footer-link:hover,
 .footer-link:focus {
   background-color: var(--acent-bg-icon);
+}
+/* form-footer */
+
+.form-title {
+  margin-bottom: 16px;
+
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--white-color);
+}
+
+.form-footer {
+  display: flex;
+}
+
+.label-form-footer {
+  position: relative;
+}
+
+.input-form-footer {
+  width: 264px;
+  height: 40px;
+  padding: 8px 16px;
+  margin-right: 24px;
+
+  border: 1px solid var(--white-color);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--white-color);
+}
+
+.form-title-email {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  color: var(--white-color);
+  background-color: var(--secondary-text-color);
+
+  transition: transform var(--duration);
+}
+
+.input-form-footer:focus + .form-title-email,
+.input-form-footer:not(:placeholder-shown) + .form-title-email {
+  transform: translateY(-140%);
+}
+
+.form--footer-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 165px;
+  height: 40px;
+  padding: 8px 24px;
+  gap: 16px;
+
+  background: var(--btn--logo-color);
+  color: var(--white-color);
+  transition: background-color var(--duration) var(--cubic-bezier);
+}
+
+.form--footer-btn:hover,
+.form--footer-btn:focus {
+  background-color: var(--acent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 /* portfolio */
@@ -700,3 +789,5 @@ img {
   fill: currentColor;
   transition: fill var(--duration) var(--cubic-bezier);
 }
+
+/* form-footer */
