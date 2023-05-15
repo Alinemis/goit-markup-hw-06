@@ -9,8 +9,11 @@
   --acent-bg-icon: #31d0aa;
   --customers-color: rgba(142, 143, 153, 1);
   --customers-link: #8e8f99;
+  /* animation */
   --duration: 250ms;
   --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+  /* animation */
+  --form-border-color: rgba(46, 47, 66, 0.4);
 }
 
 body {
@@ -259,7 +262,8 @@ img {
   letter-spacing: 0.02em;
 }
 
-.hero-button {
+.hero-button,
+.modal-form-btn {
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -276,7 +280,9 @@ img {
 }
 
 .hero-button:hover,
-.hero-button:focus {
+.hero-button:focus,
+.modal-form-btn:hover,
+.modal-form-btn:focus {
   background-color: var(--acent-color);
 
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -519,7 +525,7 @@ img {
 }
 /* form-footer */
 
-.form-title {
+.form-footer-text {
   margin-bottom: 16px;
 
   font-weight: 500;
@@ -531,15 +537,16 @@ img {
   display: flex;
 }
 
-.label-form-footer {
+.form-footer-label {
   position: relative;
 }
 
-.input-form-footer {
+.form-footer-input {
   width: 264px;
   height: 40px;
   padding: 8px 16px;
   margin-right: 24px;
+  outline: transparent;
 
   border: 1px solid var(--white-color);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -548,7 +555,12 @@ img {
   color: var(--white-color);
 }
 
-.form-title-email {
+.form-footer-input:focus {
+  border: 1px solid #4d5ae5;
+  border-radius: 4px;
+}
+
+.form-footer-tag {
   position: absolute;
   top: 50%;
   left: 15px;
@@ -564,8 +576,8 @@ img {
   transition: transform var(--duration);
 }
 
-.input-form-footer:focus + .form-title-email,
-.input-form-footer:not(:placeholder-shown) + .form-title-email {
+.form-footer-input:focus + .form-footer-tag,
+.form-footer-input:not(:placeholder-shown) + .form-footer-tag {
   transform: translateY(-140%);
 }
 
@@ -577,9 +589,11 @@ img {
   height: 40px;
   padding: 8px 24px;
   gap: 16px;
+  border: none;
 
   background: var(--btn--logo-color);
   color: var(--white-color);
+
   transition: background-color var(--duration) var(--cubic-bezier);
 }
 
@@ -639,9 +653,6 @@ img {
 
 .portfolio-item {
   flex-basis: calc((100% - 48px) / 3);
-}
-
-.portfolio-item:hover {
 }
 
 .portfolio-link {
@@ -748,7 +759,8 @@ img {
   background-color: #fcfcfc;
 
   transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--duration) var(--cubic-bezier),
+    opacity var(--duration) var(--cubic-bezier);
 }
 
 .backdrop.is-hidden .modal {
@@ -790,4 +802,88 @@ img {
   transition: fill var(--duration) var(--cubic-bezier);
 }
 
-/* form-footer */
+/* form-modal */
+
+.modal-form {
+}
+.modal-form-text {
+  display: block;
+  margin-top: 48px;
+  margin-bottom: 16px;
+
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--secondary-text-color);
+}
+
+.modal-form-label {
+  display: block;
+  margin-bottom: 4px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--customers-link);
+}
+
+.modal-form-wrapper {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.modal-form-input {
+  width: 100%;
+  height: 40px;
+  padding: 0;
+  padding-left: 44px;
+
+  border: 1px solid var(--form-border-color);
+  border-radius: 4px;
+  outline: transparent;
+  transition: border var(--duration) var(--cubic-bezier);
+}
+
+.modal-form-input:focus,
+.modal-form-textarea:focus {
+  border: 1px solid var(--btn--logo-color);
+  border-radius: 4px;
+}
+.modal-form-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  pointer-events: none;
+
+  transform: translateY(-50%);
+  transition: fill var(--duration) var(--cubic-bezier);
+}
+
+.modal-form-input:focus + .modal-form-icon {
+  fill: var(--btn--logo-color);
+}
+.modal-form-textarea {
+  display: block;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  width: 100%;
+  height: 100px;
+  resize: none;
+  border: 1px solid var(--form-border-color);
+  border-radius: 4px;
+  outline: transparent;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: var(--form-border-color);
+
+  transition: border var(--duration) var(--cubic-bezier);
+}
+.modal-form-checkbox {
+  display: flex;
+  margin-bottom: 24px;
+}
+.btn {
+}
